@@ -8,9 +8,6 @@ void setup()
   {
     Fireworks[i] = new NormalParticle();
     Fireworks[0] = new OddballParticle(0,0);
-    Fireworks[2] = new OddballParticle(100,0);
-    Fireworks[3] = new OddballParticle(0,100);
-    Fireworks[4] = new OddballParticle(100,100);
     Fireworks[1] = new JumboParticle();
   }
 }
@@ -31,7 +28,7 @@ class NormalParticle implements Particle
   int myColor;
   NormalParticle()
   {
-    myColor = color(255,0,0);
+    myColor = color(#FFFFFF);
     myX = 250;
     myY = 250;
     mySpeed = (Math.random()*8);
@@ -55,9 +52,6 @@ void mousePressed()
   {
     Fireworks[i] = new NormalParticle();
     Fireworks[0] = new OddballParticle(0,0); 
-    Fireworks[2] = new OddballParticle(100,0);
-    Fireworks[3] = new OddballParticle(0,100);
-    Fireworks[4] = new OddballParticle(100,100); 
     Fireworks[1] = new JumboParticle();
   }
   for(int i = 0; i < Fireworks.length; i ++)
@@ -88,8 +82,9 @@ class OddballParticle implements Particle//uses an interface
   }
   public void show()
   {
-    fill(255,255,255);
-    rect(myX2,myY2,25,25);
+    fill(255,0,0);
+    ellipse(myX2,myY2,20,20);
+    //rect(myX2,myY2,25,25);
   }
 }
 
@@ -97,8 +92,8 @@ class JumboParticle extends NormalParticle//uses inheritance
 {
   void show()
   {
-    fill(10,229,0);
-    ellipse((float)myX,(float)myY,100,100);
+    fill(#FFFFFF);
+    ellipse((float)myX,(float)myY,70,70);
   }
 }
 
